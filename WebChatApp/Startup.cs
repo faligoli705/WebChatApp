@@ -1,4 +1,5 @@
-using ChatApp.Services;
+using ChatApp.DataAccessLayer;
+using ChatApp.WebFramwork;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -13,7 +14,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebChatApp.Data;
 
 namespace WebChatApp
 {
@@ -29,16 +29,17 @@ namespace WebChatApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+            services.AddServices();
+            services.AddDbContext<ChatAppContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("SqlServerChatApp"));
+
+            });
             services.AddDatabaseDeveloperPageExceptionFilter();
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddRazorPages();
-            
-            services.AddSignalR();
-            services.AddSingleton<IChatRoomService,MemoryChatRoomService>();
+                .AddEntityFrameworkStores<ChatAppContext>();
+
+
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
@@ -46,6 +47,8 @@ namespace WebChatApp
             {
                 options.LoginPath = "/Login";
             });
+            services.AddRazorPages();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -76,14 +79,13 @@ namespace WebChatApp
             //});
             app.UseAuthentication();
             app.UseEndpoints(endpoints =>
-            {               
+            {
                 endpoints.MapHub<AgentHub>("/agentHub");
                 endpoints.MapHub<ChatHub>("/chatHub");
             });
 
             app.UseAuthentication();
-            app.UseAuthorization();
-
+ 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();

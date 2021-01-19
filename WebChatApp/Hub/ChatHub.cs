@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using ChatApp.DataAccessLayer;
 using ChatApp.DomainClass.Entities;
-using ChatApp.Services;
 using Microsoft.AspNetCore.SignalR;
-using WebChatApp.Models;
 
 namespace WebChatApp
 {

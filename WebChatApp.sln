@@ -7,7 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebChatApp", "WebChatApp\We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatApp.DomainClass", "ChatApp.DomainClass\ChatApp.DomainClass.csproj", "{0EF8FCDC-89B8-43F1-B43C-2112DC2300AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatApp.Services", "ChatApp.Services\ChatApp.Services.csproj", "{9AFB998F-5302-478C-8F1C-407C02463D62}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatApp.WebFramwork", "ChatApp.WebFramwork\ChatApp.WebFramwork.csproj", "{9F645D9F-659A-4792-A601-F6937EC79131}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatApp.DataAccessLayer", "ChatApp.DataAccessLayer\ChatApp.DataAccessLayer.csproj", "{C9996DEC-AF61-43F5-A4A1-863FC0E6AFEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +25,14 @@ Global
 		{0EF8FCDC-89B8-43F1-B43C-2112DC2300AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0EF8FCDC-89B8-43F1-B43C-2112DC2300AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0EF8FCDC-89B8-43F1-B43C-2112DC2300AD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9AFB998F-5302-478C-8F1C-407C02463D62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9AFB998F-5302-478C-8F1C-407C02463D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9AFB998F-5302-478C-8F1C-407C02463D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9AFB998F-5302-478C-8F1C-407C02463D62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F645D9F-659A-4792-A601-F6937EC79131}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F645D9F-659A-4792-A601-F6937EC79131}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F645D9F-659A-4792-A601-F6937EC79131}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F645D9F-659A-4792-A601-F6937EC79131}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9996DEC-AF61-43F5-A4A1-863FC0E6AFEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9996DEC-AF61-43F5-A4A1-863FC0E6AFEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9996DEC-AF61-43F5-A4A1-863FC0E6AFEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9996DEC-AF61-43F5-A4A1-863FC0E6AFEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
